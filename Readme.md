@@ -33,7 +33,7 @@ This project scrapes the top 5 trending topics from Twitter (X.com) using Seleni
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/twitter-trends-scraper.git
+   git clone https://github.com/selenophile1805/RSIT_Assignment.git
    cd twitter-trends-scraper
    ```
 
