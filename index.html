@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Trends</title>
+</head>
+<body>
+    <button id="run-script">Click here to run the script</button>
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('run-script').onclick = async () => {
+            const response = await fetch('http://127.0.0.1:5000/run-script');
+            const data = await response.json();
+            document.getElementById('results').innerHTML = `
+                These are the most happening topics as on ${data.timestamp}:
+                <ul>
+                    <li>${data.trend1}</li>
+                    <li>${data.trend2}</li>
+                    <li>${data.trend3}</li>
+                    <li>${data.trend4}</li>
+                    <li>${data.trend5}</li>
+                </ul>
+                The IP address used for this query was ${data.ip_address}.
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+                <button id="run-script">Click here to run the query again</button>
+            `;
+        };
+    </script>
+</body>
+</html>
